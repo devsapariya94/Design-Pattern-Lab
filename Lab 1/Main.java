@@ -19,21 +19,21 @@ class Industry {
     }
 
     public void addApplicant(Applicant applicant) {
-        this.applicants.add(applicant);0
+        this.applicants.add(applicant);
     }
 
     public void printApplicants(){
         System.out.println("Applicants for industry " + name + ":");
         for (Applicant applicant : applicants) {
-            System.out.println(applicants.getName());
+            System.out.println(applicant.getName());
         }
     }
 
-    public List<Applicant> printApplcantsWithExperienceMoreThan5Years(){
+    public void printApplcantsWithExperienceMoreThan5Years(){
         System.out.println("Applicants for industry " + name + " having experience more than 5 years are: ");
         for (Applicant applicant : applicants) {
-            if(applicants.getExperience()>=5){
-                System.out.println(applicants.getName()+" -> Experience :"+applicants.getExperience());
+            if(applicant.getExperience()>=5){
+                System.out.println(applicant.getName()+" -> Experience :"+applicant.getExperience());
             }
             
         }
@@ -58,7 +58,7 @@ class Applicant {
     }
 }
 
-public class test{
+public class Main{
     public static void main(String[] args) {
         Industry IT =new Industry("IT");
         Applicant a1=new Applicant("Shubham Patel", 5);
