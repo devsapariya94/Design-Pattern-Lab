@@ -120,6 +120,6 @@ public class Computer_builder {
         System.out.println("Moniter Size: " + computer.getMoniterSize());
         System.out.println("Moniter Type: " + computer.getMoniterType());
         System.out.println("OS Config: " + computer.getOsConfig());
-        System.out.println("Device Driver: " + computer.getDeviceDriver());
+        System.out.println("Device Driver: " + computer.getDeviceDriver()); 
     }
 }
