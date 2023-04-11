@@ -82,18 +82,19 @@ class CustomerServiceProxy implements CustomerDatabaseService {
     @Override
     public Customer getCustomerDetail(String custId) throws FileNotFoundException {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter user id and name to log in:");
         String userId = sc.next();
         String userName = sc.next();
-        Date date = new Date();
+        Date date = new Date(); 
         FileWriter fw;
         try {
-            fw = new FileWriter("logUserInfo.txt", true);
+            fw = new FileWriter("logUser Info.txt", true);
             fw.write(userId + "," + userName + "," + date + "\n");
             fw.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (userId.equals("123")) {
+        if (userName.equals("Manager")) {
             return cs.getCustomerDetail(custId);
         } else {
             System.out.println("Access denied. Only Managers can access customer details.");
@@ -104,7 +105,7 @@ class CustomerServiceProxy implements CustomerDatabaseService {
 
 
 
-class Main {
+public class ProxyDP {
     public static void main(String[] args) throws FileNotFoundException {
         CustomerDatabaseService customerService = new CustomerServiceProxy();
         Customer c = customerService.getCustomerDetail("CU103");
